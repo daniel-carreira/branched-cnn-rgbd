@@ -3,7 +3,7 @@ from torch.utils.data import Dataset
 from torchvision import datasets, transforms
 
 class CustomDataset(Dataset):
-    def __init__(self, rgb_folder, depth_folder, transform=None, normalized=True):
+    def __init__(self, rgb_folder, depth_folder, transform=None, normalized=False):
         self.rgb_dataset = datasets.ImageFolder(root=rgb_folder, transform=transform)
         depth_transforms = transforms.Compose([transforms.Grayscale(), transform])
         self.depth_dataset = datasets.ImageFolder(root=depth_folder, transform=depth_transforms)

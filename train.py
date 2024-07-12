@@ -85,9 +85,9 @@ def main(argv):
         ])
     }
 
-    train_dataset = CustomDataset(f"{arg_dataset_rgb}/train", f"{arg_dataset_depth}/train", transform=image_transforms['train'], normalized=True)
-    val_dataset = CustomDataset(f"{arg_dataset_rgb}/valid", f"{arg_dataset_depth}/valid", transform=image_transforms['valid'], normalized=True)
-    test_dataset = CustomDataset(f"{arg_dataset_rgb}/test", f"{arg_dataset_depth}/test", transform=image_transforms['test'], normalized=True)
+    train_dataset = CustomDataset(f"{arg_dataset_rgb}/train", f"{arg_dataset_depth}/train", transform=image_transforms['train'], normalized=False)
+    val_dataset = CustomDataset(f"{arg_dataset_rgb}/valid", f"{arg_dataset_depth}/valid", transform=image_transforms['valid'], normalized=False)
+    test_dataset = CustomDataset(f"{arg_dataset_rgb}/test", f"{arg_dataset_depth}/test", transform=image_transforms['test'], normalized=False)
     
     # Get a mapping of the indices to the class names, in order to see the output classes of the test images.
     idx_to_class = {v: k for k, v in train_dataset.rgb_dataset.class_to_idx.items()}
